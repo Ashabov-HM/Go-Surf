@@ -22,8 +22,6 @@
     right: 80px;
     bottom: 116px;
     text-align: right;
-    color: #fff;
-    text-transform: uppercase;
 
         &-suptitle {
             margin-bottom: 5px;
@@ -60,7 +58,7 @@
 }
 
 
-.slider-dots {
+.slider-dotshead {
     position: absolute;
     right: 50px;
     bottom: 36px;
@@ -87,6 +85,7 @@
         line-height: 34px;
     }
     &__name {
+        text-transform: capitalize;
         font-weight: 300;
         line-height: 19px;
     }
@@ -105,15 +104,16 @@
 }
 
 .menu {
+    text-transform: capitalize;
     padding-top: 118px;
     &__list {
         text-align: center;
         span {
+           
             display: block;
             font-size: 12px;
             line-height: 14px;
             letter-spacing: 3px;
-            color: #FFFFFF;
             padding-top: 6.5px;
             margin-bottom: 36px;
         }
@@ -126,8 +126,6 @@
     font-weight: 800;
     font-size: 200px;
     line-height: 156px;
-    text-transform: uppercase;
-    color: #FFFFFF;
     opacity: 0.07;
     position: absolute;
     top: 0;
@@ -140,7 +138,6 @@
     margin-bottom: 30px;
     font-size: 72px;
     line-height: 64px;
-    text-transform: uppercase;
     span {
         padding-top: 15px;
         display: block;
@@ -156,6 +153,7 @@
 }
 
 .header__location {
+    text-transform: capitalize;
     display: inline-block;
     font-size: 12px;
     line-height: 14px;
@@ -204,13 +202,329 @@
 
 
 
+.title {
+    
+    span {
+        font-weight: 800;
+        font-size: 200px;
+        font-weight: 800;
+        color: rgba(#fff, 0.02);
+        position: relative;
+        transform: translateX(-50px);
+        display: inline-block;
+    }
+
+    h3 {
+        position: absolute;
+        top: 0;
+        right: -5px;
+        color: white;
+        margin: 0;
+        font-size: 80px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 1px;
+            width: 80px;
+            background: #4AF6CD;
+            z-index: 3;
+        }
+    }
+}
+
+.surf {
+    padding: 160px 0px 120px;
+    background-image: url(../images/surf-point.png);
+    background-position: right 200px;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    &__subtitle{
+        text-align: right;
+        padding-right: 80px;
+        margin-top: -86px;
+    }
+}
+
+.subtitle {
+    display: inline-block;
+    &__head{
+        text-align: right;
+        font-weight: 800;
+        font-size: 40px;
+        
+        span{
+            font-weight: 100;
+        }
+    }
+}
+
+.surf-box {
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: cover;
+    background-size: cover;
+    
+    &__inner {
+        min-height: 750px;
+        background: rgba(#1C2121, .85);
+        position: relative;
+        transition: all 0.5s; // может сделать иначе?
+        &:hover {
+            background: rgba(#1C2121, .3);
+            
+            .surf-box__inner-btn {
+                display: block;
+            }
+        }
+    }
+    
+}
+
+.surf-box__inner {
+    &-title {
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 36px;
+        padding: 72px 0 0 40px;
+        width: 140px;
+    }
+
+    &-location {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 8px;
+        transform: rotate(-90deg);
+        position: absolute;
+        left: 40px;
+        bottom: 80px;
+        width: 0;
+        height: 0;
+        white-space: nowrap;
+        span {
+            font-weight: 100;
+        }
+    }
+
+    &-btn {
+        display: none;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+
+.surf-slider {
+    padding-top: 110px;
+
+    .slider-arrows {
+        top: 50px;
+        opacity: 0.25;
+    }
+
+    .slick-slide:nth-child(4n + 1) {
+        margin-top: 32px;
+    }
+    .slick-slide:nth-child(4n + 3) {
+        margin-top: 89px;
+    }
+    .slick-current {
+        .surf-box__inner-btn {
+            display: block;
+        }
+
+        .surf-box__inner {
+            background: rgba(#1C2121, .3);
+        }
+    }
+
+}
+
+
+.slider-map {
+    max-width: 1200px;
+    min-height: 635px;
+    background-image: url(../images/worldMap.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+
+    .slick-list {
+        min-height: 635px;
+    }
+
+    .slick-current {
+        .slider-dots__content {
+            display: block;
+
+        }
+    }
+}
 
 
 
+.slider-dots__circle {
+    width: 23px;
+    height: 23px;
+    background-color: #4AF6CD;
+    border-radius: 50%;
+}
 
+.slider-dots {
+    position: relative;
+    
+    &--1{
+        top: 335px;
+        left: 0;
+        .slider-dots__content {
+            transform: translateX(0);
+            &::before {
+                left: 0;
+            }
+        }
+    }
+    &--2{
+        top: 270px;
+        .slider-dots__circle{
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                background-image: url(../images/mini-marker.png);
+                width: 14px;
+                height: 14px;
+                background-size: cover;
+                right: -15px;
+                top: -25px;
+            }
+        }
+    }
+    &--3{
+        top: 345px;
+        left: 25px;
+    }
+    &--4{
+        top: 470px;
+        left: -25px;
+    }
+    &--5{
+        top: 230px;
+        left: -60px;
+    }
+    &--6{
+        top: 560px;
+        left: -110px;
+    }
+    &--7{
+        top: 375px;
+        left: -95px;
+    }
+    &--78 {
 
+    }
+    &--8{
+        top: 500px;
+        left: 35px;
 
+        .slider-dots__content {
+            transform: translateX(-261px);
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}
+
+.slider-dots__content {
+    display: none;
+    position: absolute;
+    bottom: 35px;
+    transform: translateX(-50%);
+    width: 285px;
+    padding: 28px 31px 0 32px;
+    background-color: rgba(#0f1010, .7);
+    border-radius: 6px;
+    z-index: 70000 ;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid #4AF6CD;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        bottom: -21.1px;
+        left: 50%;
+        border-bottom-left-radius: 150px;
+        border-bottom-right-radius: 150px;
+    }
+
+    &-row {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 31px;
+    }
+
+    &-title {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 26px;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: #4AF6CD;
+            width: 80px;
+            height: 1px;
+            bottom: 0;
+            z-index: 5;
+        }
+    }
+
+    &-subtitle {
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: capitalize;
+    }
+
+    &-link {
+        padding-top: 4px;
+
+    }
+
+    &-item {
+        text-align: center;
+        img {
+            margin-bottom: 7px;
+        }
+    }
+
+    &-number{
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    &-name {
+        font-weight: 100;
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
 
 
 
 @import "media";
+
+// 4AF6CD green
