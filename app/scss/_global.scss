@@ -18,6 +18,8 @@ body{
     text-transform: uppercase;
 }
 
+.container {}
+
 img{
     margin: 0;
 }
@@ -55,8 +57,64 @@ ul, li {
     }
 }
 
-.surf {
+
+.headline-right{
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 7.33333px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.5;
+    padding-right: 103px;
+    position: relative;
+    display: inline-block;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        background-color: #fff;
+        right: 0;
+        top: 50%;
+    }
+}
+
+
+.surf,
+.travel {
     padding: 160px 0 210px 0;
+}
+.travel{
+    padding-bottom: 265px;
+
+}
+.subtitle {
+    display: inline-block;
+    &__head{
+        text-align: right;
+        font-weight: 800;
+        font-size: 40px;
+        
+        span{
+            font-weight: 100;
+        }
+    }
+}
+
+.descr {
+    display: inline-block;
+    &__head{
+        position: relative;
+        padding-right: 74px;
+        text-align: right;
+        font-weight: 800;
+        font-size: 40px;
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
 }
 
 .btn {
